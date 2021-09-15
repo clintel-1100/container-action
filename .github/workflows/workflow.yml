@@ -5,12 +5,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout
       - uses: actions/checkout@v2
+
       - name: run the action
         id: hello
         uses: ./
         with:
           myInput: 'James T'
+
       - name: output
         run: |
           echo ${{ steps.hello.outputs.memory }}
